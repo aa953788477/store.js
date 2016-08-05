@@ -1,0 +1,40 @@
+{
+  "name": "si-store",
+  "version": "0.1.0",
+  "description": "基于Web Storage的缓存库",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aa953788477/store.js.git"
+  },
+  "keywords": [
+    "store"
+  ],
+  "author": "Myron Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aa953788477/store.js/issues"
+  },
+  "homepage": "https://github.com/aa953788477/store.js#readme",
+  "devDependencies": {
+    "babel-core": "^6.13.0",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "eslint": "^3.2.2",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "rollup": "^0.34.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "dependencies": {}
+}
