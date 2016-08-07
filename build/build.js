@@ -16,7 +16,7 @@ var banner =
 // update main file
 var main = fs
   .readFileSync('src/index.js', 'utf-8')
-  .replace(/log\.version = '@VERSION'/, "log.version = '" + version + "'")
+  .replace(/store\.version = '@VERSION'/, "store.version = '" + version + "'")
 
 fs.writeFileSync('src/index.js', main)
 
@@ -27,7 +27,7 @@ rollup.rollup({
         commonjs(),
         babel({
             exclude: 'node_modules/**',
-            presets: [ "es2015-rollup" ]
+            presets: [ 'es2015-rollup' ]
         })
     ]
 }).then(function(bundle) {
@@ -44,7 +44,7 @@ rollup.rollup({
             commonjs(),
             babel({
                 exclude: 'node_modules/**',
-                presets: [ "es2015-rollup" ]
+                presets: [ 'es2015-rollup' ]
             })
         ]
     }).then(function(bundle) {

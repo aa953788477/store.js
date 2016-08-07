@@ -8,5 +8,10 @@ export default {
   },
   remove (key) {
     storage.removeItem(key)
+  },
+  each (callback) {
+    for (let key in storage) {
+      if (callback(this.get(key), key) === false) return
+    }
   }
 }
