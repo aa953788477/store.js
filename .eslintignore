@@ -2,3 +2,4 @@ build/*.js
 config/*.js
 dist/*.js
 .eslintrc.js
+si-store.js

@@ -27,6 +27,7 @@ rollup.rollup({
         commonjs(),
         babel({
             exclude: 'node_modules/**',
+            babelrc: false,
             presets: [ 'es2015-rollup' ]
         })
     ]
@@ -44,6 +45,7 @@ rollup.rollup({
             commonjs(),
             babel({
                 exclude: 'node_modules/**',
+                babelrc: false,
                 presets: [ 'es2015-rollup' ]
             })
         ]

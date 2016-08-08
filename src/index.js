@@ -1,5 +1,5 @@
 import Store from './Store'
-import {register} from './storage'
+import {register} from './storage/index.js'
 
 let store = new Store()
 
