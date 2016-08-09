@@ -1,5 +1,5 @@
 /*!
- * si-store.js v0.1.0
+ * si-store.js v0.1.1
  * (c) 2016 Myron Liu
  * Released under the MIT License.
  */
