@@ -8,7 +8,7 @@ import {
 export default class Store {
   constructor (options) {
     this.options = extend({}, config, options)
-    this.storage = getStorage(options.storage)
+    this.storage = getStorage(this.options.storage)
     this.length = 0
     this._init()
   }
@@ -30,6 +30,12 @@ export default class Store {
     return this._getVal(item)
   }
 
+  remove (key) {
+    key = this._setKey(key)
+    this.storage.remove(key)
+    return this
+  }
+
   forEach (callback) {
     this.storage.each((item, key) => {
       key = this._getKey(key)
@@ -43,12 +49,6 @@ export default class Store {
     this.forEach((value, key) => {
       this.remove(key)
     })
-    return this
-  }
-
-  remove (key) {
-    key = this._setKey(key)
-    this.storage.remove(key)
     return this
   }
 
@@ -68,7 +68,7 @@ export default class Store {
     return {
       value: value,
       key: key,
-      exp: exp || this.options.expires,
+      exp: exp === undefined || exp === null ? this.options.expires : exp,
       time: new Date().getTime()
     }
   }
@@ -76,7 +76,7 @@ export default class Store {
   _getVal (item) {
     if (item === null) return null
     let nowTime = new Date().getTime()
-    if (item.exp && nowTime - item.time > item.exp) {
+    if (item.exp !== undefined && item.exp !== null && nowTime - item.time >= item.exp) {
       this.storage.remove(item.key)
       return null
     }

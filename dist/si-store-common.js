@@ -116,7 +116,7 @@ var Store = function () {
     classCallCheck(this, Store);
 
     this.options = extend({}, config, options);
-    this.storage = getStorage(options.storage);
+    this.storage = getStorage(this.options.storage);
     this.length = 0;
     this._init();
   }
@@ -142,6 +142,13 @@ var Store = function () {
       return this._getVal(item);
     }
   }, {
+    key: 'remove',
+    value: function remove(key) {
+      key = this._setKey(key);
+      this.storage.remove(key);
+      return this;
+    }
+  }, {
     key: 'forEach',
     value: function forEach(callback) {
       var _this = this;
@@ -164,13 +171,6 @@ var Store = function () {
       return this;
     }
   }, {
-    key: 'remove',
-    value: function remove(key) {
-      key = this._setKey(key);
-      this.storage.remove(key);
-      return this;
-    }
-  }, {
     key: 'has',
     value: function has(key) {
       return !!this.get(key);
@@ -190,7 +190,7 @@ var Store = function () {
       return {
         value: value,
         key: key,
-        exp: exp || this.options.expires,
+        exp: exp === undefined || exp === null ? this.options.expires : exp,
         time: new Date().getTime()
       };
     }
@@ -199,7 +199,7 @@ var Store = function () {
     value: function _getVal(item) {
       if (item === null) return null;
       var nowTime = new Date().getTime();
-      if (item.exp && nowTime - item.time > item.exp) {
+      if (item.exp !== undefined && item.exp !== null && nowTime - item.time >= item.exp) {
         this.storage.remove(item.key);
         return null;
       }
