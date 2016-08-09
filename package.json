@@ -2,7 +2,7 @@
   "name": "si-store",
   "version": "0.1.0",
   "description": "基于Web Storage的缓存库",
-  "main": "index.js",
+  "main": "dist/si-store-common.js",
   "directories": {
     "test": "test"
   },
