@@ -1,6 +1,6 @@
 {
   "name": "si-store",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "基于Web Storage的缓存库",
   "main": "dist/si-store-common.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aa953788477/store.js.git"
+    "url": "git+https://github.com/myronliu347/store.js.git"
   },
   "keywords": [
     "store"
@@ -20,9 +20,9 @@
   "author": "Myron Liu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aa953788477/store.js/issues"
+    "url": "https://github.com/myronliu347/store.js/issues"
   },
-  "homepage": "https://github.com/aa953788477/store.js#readme",
+  "homepage": "https://github.com/myronliu347/store.js#readme",
   "devDependencies": {
     "babel-core": "^6.13.0",
     "babel-eslint": "^6.1.2",
