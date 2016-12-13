@@ -1,5 +1,7 @@
 # si-store
 
+![](https://travis-ci.org/myronliu347/store.js.svg?branch=master)
+
 一个基于 Web Storage 的存储库，提供简单的api操作，可以设置缓存时间
 
 ## 安装
